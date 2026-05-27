@@ -60,11 +60,18 @@ while True:
     print()
     print("-------기능-------")
     
-    if choice == 1 or choice ==2:
+    # 메뉴 조회 후 바로 주문으로 넘어가려면 아래 조건문을 사용하세요.
+
+    if choice == 1 or choice ==2: 
         choice =3
     else:
         choice = int(input("1.가격별 메뉴 조회\n2.종류별 메뉴 조회\n3.주문\n0.종료\n\n기능을 선택하세요. : "))
         print()
+
+    # 메뉴 조회 후 다시 메인으로 돌아오려면 위 조건문을 주석처리하고 아래 두 줄을 사용하세요.
+
+    # choice = int(input("1.가격별 메뉴 조회\n2.종류별 메뉴 조회\n3.주문\n0.종료\n\n기능을 선택하세요. : ")) 
+    # print() 
 
     if choice == 0:
         break
