@@ -1,4 +1,4 @@
-Class = [["수학", 113, "A+"], ["영어", 3, "B+"], ["국어", 4, "A"], ["체육", 2, "F"]]
+Class = [["수학", 4, "A+"], ["영어", 3, "B+"], ["국어", 4, "A"], ["체육", 2, "F"]]
 have_credit = ["A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"]
 score_credit = {"A+":4.5, "A":4.0, "B+":3.5, "B":3.0, "C+":2.5, "C":2.0, "D+":1.5, "D":1.0, "F":0.0}
 
@@ -7,9 +7,9 @@ def 평균평점():
     count = 0
     for name, credit, have in Class:
         if score_credit[have]: # F학점을 평점 평균 계산에 포함 시키고 싶다면 주석처리하고 아래 두 줄의 들여쓰기를 한 칸 없애세요.
-            plus += score_credit[have]
-            count += 1
-    ave = plus / count
+            plus += score_credit[have] * credit
+            count += credit
+    ave = round(plus / count, 2)
     return ave
 
 def 이수학점():
@@ -17,8 +17,6 @@ def 이수학점():
     for name, credit, have in Class:
         이수 += credit
     return 이수
-
-
 
 while True:
     print("\n------메뉴------")
@@ -63,19 +61,15 @@ while True:
                 A = True
             else:
                 print(f"{8 - 등록학기}학기 부족")
-                continue
             
             print()
             print(f"이수 학점 : {이수학점()}")
             if 이수학점() >= 120:
-            
                 print("졸업 학점 충족")
-            
                 B = True
             else:
                 print(f"{120 - 이수학점()}학점 부족")
-                break
-
+                
             print()
             print(f"평균평점 : {평균평점()}")
 
@@ -95,3 +89,6 @@ while True:
 
             else:
                 print("졸업 여건을 충족하지 못했습니다.")
+
+    else:
+        print("잘못 누르셨습니다. 다시 입력해주세요.")
