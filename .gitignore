@@ -8,4 +8,7 @@ wheels/
 
 # Virtual environments
 .env
-/.venv/
+.venv/
+
+# etc...
+SIN/
