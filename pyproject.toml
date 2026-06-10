@@ -18,4 +18,5 @@ dependencies = [
     "requests>=2.34.2",
     "scikit-learn>=1.8.0",
     "seaborn>=0.13.2",
+    "xmltodict>=1.0.4",
 ]
