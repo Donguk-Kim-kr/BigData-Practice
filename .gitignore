@@ -12,3 +12,5 @@ wheels/
 
 # etc...
 SIN/
+TEST/file
+TEST/07_빅데이터수집시스템개발_김동욱/.env
